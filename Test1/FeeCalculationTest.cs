@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Solution;
+﻿using Solution;
 using Xunit;
 
 namespace TestsForFeeCalculation
@@ -12,10 +9,10 @@ namespace TestsForFeeCalculation
         public void CalculatingFee_ExpectedActual()
         {
             //Arrange
-            double expected = 31;
+            decimal expected = 31;
 
             //Act
-            double actual = Program.FeeCalculation(200, 29);
+            decimal actual = Program.FeeCalculation(200, 29);
 
             //Assert
             Assert.Equal(expected, actual);

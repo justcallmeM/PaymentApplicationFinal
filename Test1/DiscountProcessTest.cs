@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Solution;
+﻿using Solution;
 using Xunit;
 
 namespace TestsForDiscountProcesses
@@ -12,10 +9,10 @@ namespace TestsForDiscountProcesses
         public void DiscountProcess_PassingCustomPercentages()
         {
             //Arrange
-            double expected = 162; //180 - 18 (because 10% for TELIA)
+            decimal expected = 162; //180 - 18 (because 10% for TELIA)
 
             //Act
-            double actual = Program.DiscountProcess("TELIA", 180);
+            decimal actual = Program.DiscountProcess("TELIA", 180);
 
             //Assert
             Assert.Equal(expected, actual);
