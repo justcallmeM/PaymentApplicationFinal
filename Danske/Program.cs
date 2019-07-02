@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Solution
+namespace Application
 {
     public class Program
     {
@@ -24,17 +24,17 @@ namespace Solution
 
             while (lineCount > counter)
             {
-                uniqueTransaction = new UniqueTransaction();
-
                 transaction.DataSeparation(sortedContent, counter);
 
                 decimal transactionAfterDiscount = discounting.DiscountProcess(transaction.merchantName, transaction.transaction);
+
+                uniqueTransaction = new UniqueTransaction();
 
                 uniqueTransaction.UniquenessCheck(transaction.date, transaction.merchantName, uniqueTransactions);
 
                 uniqueTransactions.Add(uniqueTransaction);
 
-                int invoiceFee = calculatingFees.InvoiceFeeDetermination(uniqueTransactions, transaction.date, transaction.merchantName);
+                int invoiceFee = calculatingFees.InvoiceFeeCalculation(uniqueTransactions, transaction.date, transaction.merchantName);
 
                 decimal totalFee = calculatingFees.TotalFeeCalculation(transactionAfterDiscount, invoiceFee);
 

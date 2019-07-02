@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Solution
+namespace Application
 {
     class CalculatingFees
     {
-        public int InvoiceFeeDetermination(List<UniqueTransaction> uniqueTransactions, DateTime originalTime, string originalMerchant)
+        public int InvoiceFeeCalculation(List<UniqueTransaction> uniqueTransactions, DateTime originalTime, string originalMerchant)
         {
             int fee = 0;
 
